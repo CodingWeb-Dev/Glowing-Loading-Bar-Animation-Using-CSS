@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(23, 24, 27);
+}
+.loader{
+    position: relative;
+    width: 280px;
+    height: 12px;
+    background: linear-gradient(90deg,red,orange,
+    yellow,green,blue,purple,red);
+    border-radius: 5px;
+    animation: loader 22s linear infinite;
+    background-size: 600%;
+}
+.loader::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,red,orange,
+    yellow,green,blue,purple,red);
+    animation: loader 22s linear infinite;
+    background-size: 600%;
+    filter: blur(20px);
+}
+@keyframes loader{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 600% 0;
+    }
+}
